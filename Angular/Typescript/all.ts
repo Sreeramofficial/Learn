@@ -1,8 +1,11 @@
-//custom types
+// function overloading
+function add(num1: number, num2: number): number;
+function add(num1: string, num2: string): string;
+function add(num1:any,num2:any):any{
+    return num1+num2;
+}
+//
 
-type Gender="male" | "female";
+// this will couse eroor after method
+// function add(num1: number, num2: number): number;
 
-// here we can use only either male or female
-let gender:Gender="male";
-
-// ..this is use of type
