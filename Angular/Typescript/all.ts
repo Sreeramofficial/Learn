@@ -1,13 +1,13 @@
-//union operator
+type values={
+    name:string,
+    age:number,
+    isMarried?:boolean
+}
 
-let age:number| string;
-age=12;
-age=126;
-age="reer"
-age=19;
+let Sreream:values={
+    name:"sreeram",
+    age:20,
+//    isMarried: true
+}
 
-//here we can define as both string and number
-
-// declare same as like array
-let arr:(string|number)[]=["sreeram",2]
-
+//
