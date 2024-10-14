@@ -1,14 +1,29 @@
-// enums
+// key of values of
 
 
-
-enum Status{ 
-    PENDING=0,
-    COMPLETED,
-    FAILED
+// this is object
+const Status={
+    FAIL:"fail",
+    PASS:"pass"
 }
 
-function geMessage(message:string,status: Status):number{
-    return Status.COMPLETED;
-
+// so we need to convert to type format
+// then we are taking it as key
+function getStatus(id :string,status: keyof typeof Status){
+    console.log(Status[status]);
 }
+
+
+
+// this will generate
+
+// type status={
+//     fail:string;
+//     pass:string;
+// }
+
+
+// interface Person {
+//   name: string;
+//   age: number;
+// }
