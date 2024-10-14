@@ -1,10 +1,14 @@
-// generics
-function getName<T>(age :T):T{
-    return age;
-}
-getName(6);
-//we  can say like type
-// then
-getName<string>("sre");
+// enums
 
-// getName<string>(21);
+
+
+enum Status{ 
+    PENDING=0,
+    COMPLETED,
+    FAILED
+}
+
+function geMessage(message:string,status: Status):number{
+    return Status.COMPLETED;
+
+}
