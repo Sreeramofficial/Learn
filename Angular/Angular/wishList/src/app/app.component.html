@@ -1,0 +1,35 @@
+<div class="container">
+  <!-- if statement to show values -->
+  <div *ngIf="items.length == 0; then noitems; else showitems"></div>
+  <!-- <div *ngIf="items.length == 0; else showitems">
+    no items present //we can also wite like this
+  </div> -->
+
+  <!-- to show based on deciion -->
+  <ng-template #noitems>
+    <h4>There is no items in your wish!!</h4>
+  </ng-template>
+  <!-- to show based on deciion -->
+  <ng-template #showitems>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Target</th>
+            <th scope="col">isComplete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr></tr>
+
+          <tr *ngFor="let item of items">
+            <td>{{ item.wishText }}</td>
+            <td>{{ item.isComplete }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</div>
+
+<!-- ng ....if else for are called sructural directive  -->
