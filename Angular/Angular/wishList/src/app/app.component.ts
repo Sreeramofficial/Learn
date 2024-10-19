@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { wishItem } from '../shared/modules/wishlist';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { FormsModule } from '@angular/forms';
+import { retry } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,23 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   newTarget = '';
   newTargetStatus: boolean = false;
-
+  listFilter: String = '0';
   title = 'Sreeram';
+  emptyWish: wishItem[] = [];
+  get filteredWish(): wishItem[] {
+    let val = this.listFilter;
+    if (val == '1') {
+      return this.items.filter((item) => item.isComplete);
+    } else if (val == '2') {
+      return this.items.filter((item) => !item.isComplete);
+    } else if (val == '0') {
+      return this.items;
+    } else {
+      return this.items;
+    }
+  }
   items: wishItem[] = [
-    // new wishItem('angular', true),
+    new wishItem('angular', true),
     // new wishItem('move to another company', false),
     // new wishItem('be settle', false),
   ];
