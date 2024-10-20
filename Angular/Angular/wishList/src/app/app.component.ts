@@ -4,17 +4,22 @@ import { wishItem } from '../shared/modules/wishlist';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { FormsModule } from '@angular/forms';
 import { FooterWishComponent } from './footer-wish/footer-wish.component';
+import { WishFormComponent } from './wish-form/wish-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [CommonModule, RouterOutlet, FormsModule, FooterWishComponent], // Add CommonModule and RouterOutlet here
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FormsModule,
+    FooterWishComponent,
+    WishFormComponent,
+  ], // Add CommonModule and RouterOutlet here
 })
 export class AppComponent {
-  newTarget = '';
-  newTargetStatus: boolean = false;
   listFilter: String = '0';
   title = 'Sreeram';
   emptyWish: wishItem[] = [];
@@ -37,11 +42,6 @@ export class AppComponent {
   ];
   toggleItem(event: wishItem) {
     event.isComplete = !event.isComplete;
-  }
-  addWish() {
-    this.items.push(new wishItem(this.newTarget, this.newTargetStatus));
-    this.newTarget = '';
-    this.newTargetStatus = false;
   }
   account = 'Sreeram';
   links: string[] = ['Home', 'Contact', 'Privacy&Policy'];
