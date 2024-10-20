@@ -3,14 +3,14 @@ import { RouterOutlet } from '@angular/router';
 import { wishItem } from '../shared/modules/wishlist';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { FormsModule } from '@angular/forms';
-import { retry } from 'rxjs';
+import { FooterWishComponent } from './footer-wish/footer-wish.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [CommonModule, RouterOutlet, FormsModule], // Add CommonModule and RouterOutlet here
+  imports: [CommonModule, RouterOutlet, FormsModule, FooterWishComponent], // Add CommonModule and RouterOutlet here
 })
 export class AppComponent {
   newTarget = '';
@@ -44,4 +44,5 @@ export class AppComponent {
     this.newTargetStatus = false;
   }
   account = 'Sreeram';
+  links: string[] = ['Home', 'Contact', 'Privacy&Policy'];
 }
