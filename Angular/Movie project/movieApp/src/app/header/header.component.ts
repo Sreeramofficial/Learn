@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-
+  constructor(private router: Router, private auth: AuthService) {}
+  goToHome() {
+    this.router.navigate(['movie']);
+  }
+  logout() {
+    this.auth.logout();
+  }
 }
