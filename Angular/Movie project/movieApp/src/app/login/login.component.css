@@ -118,3 +118,14 @@ button:hover {
 .error-message.warning {
   background-color: rgb(255, 193, 7); /* Yellow for warnings */
 }
+.login-box {
+  border-radius: 22px;
+  text-decoration: double;
+  color: #0056b3;
+}
+.buttonOp {
+  opacity: 1;
+}
+.buttonOpWithout {
+  opacity: 0.1;
+}

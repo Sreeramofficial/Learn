@@ -1,51 +1,114 @@
-<div class="container">
-  <div class="image-section">
-    <img
-      src="https://cdn.pixabay.com/photo/2019/05/23/13/11/headphones-4223911_1280.jpg"
-      alt="Welcome Image"
-    />
-  </div>
-  <div class="login-container">
-    <div class="header-text">
-      <h1>Join Us Today!</h1>
-      <p>
-        Your journey to a better experience starts here. Log in to access your
-        account.
-      </p>
-    </div>
-    <h2>Welcome Back!</h2>
-    <p>Please enter your credentials to continue.</p>
-    <form action="/login" method="POST">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input
-          type="text"
-          id="userName"
-          name="userName"
-          required
-          placeholder="Enter your username"
-          [(ngModel)]="userName"
-        />
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          placeholder="Enter your password"
-          [(ngModel)]="password"
-        />
-      </div>
-      <button type="submit" (click)="login()">Login</button>
+<app-header [nextPage]="nextPage"></app-header>
 
-      <div [ngClass]="errorClass" *ngIf="error">
-        {{ error }}
+<div class="row">
+  <div class="col-sm-6">
+    <div style="min-height: 500px" class="card">
+      <div class="card-body">
+        <h5 class="card-title">HELLO WORLD!!!</h5>
+        <p class="card-text">
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          gfg fg . With supporting text below as a natural lead-in to additional
+          content. With supporting text below as a natural lead-in to additional
+          content.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-    </form>
-    <p class="footer-text">
-      Don't have an account? <a href="/register">Sign up here</a>.
-    </p>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div
+        class="card-body"
+        style="
+          min-height: 600px;
+          background-image: url('https://img.freepik.com/free-vector/cricket-championship-with-ball-wicket-with-helmet-cricket-stadium-freehand-sketch-graphic-design-vector-illustration_460848-11912.jpg?semt=ais_siglip');
+        "
+      >
+        <div class="container">
+          <div class="login-box">
+            <h2>Welcome Back!</h2>
+            <p>Lets Toss the coin to start the Game!</p>
+            <form action="/login" method="POST">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input
+                  type="text"
+                  id="userName"
+                  name="userName"
+                  required
+                  placeholder="Enter your username"
+                  [(ngModel)]="userName"
+                  (input)="validateInput($event, 'userName')"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  required
+                  placeholder="Enter your password"
+                  [(ngModel)]="password"
+                  (input)="validateInput($event, 'passWord')"
+                />
+              </div>
+              <button
+                [ngClass]="noopacity"
+                (mouseenter)="showButton($event)"
+                (mouseleave)="leaveButton($event)"
+                type="submit"
+                (click)="login()"
+              >
+                Login
+              </button>
+
+              <div [ngClass]="errorClass" *ngIf="error">
+                {{ error }}
+              </div>
+            </form>
+            <p class="footer-text" style="color: black">
+              Don't have an <br />account?
+              <a href="/register">
+                <br />
+                Sign up here</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<app-footer></app-footer>

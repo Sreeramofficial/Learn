@@ -10,7 +10,7 @@ import { ChartComponent } from 'chart.js';
   styleUrl: './chart.component.css',
 })
 export class ChartComponentApp {
-  @Input() data = {
+  @Input() data: any = {
     labels: [],
     datasets: [
       {
@@ -18,5 +18,11 @@ export class ChartComponentApp {
         data: [],
       },
     ],
+  };
+  @Input() heading: any;
+  @Input() explanation: any = {
+    bestTeam: 'csk',
+    totalCup: 5,
+    captain: '',
   };
 }

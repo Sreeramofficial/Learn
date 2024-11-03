@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -10,11 +10,22 @@ import { AuthService } from '../services/auth.service';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  routePage = '';
+  currentPage: string = '';
   constructor(private router: Router, private auth: AuthService) {}
   goToHome() {
-    this.router.navigate(['movie']);
+    if (this.router.url == '/home') {
+      console.log;
+      this.router.navigate(['movie']);
+    } else {
+      this.router.navigate(['home']);
+    }
   }
   logout() {
     this.auth.logout();
   }
+  @Input() nextPage = {
+    main: '',
+    second: '',
+  };
 }
